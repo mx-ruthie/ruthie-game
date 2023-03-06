@@ -22,7 +22,9 @@ app.get("/", (req, res) => {
   });
 
 // Make the GET request for the GAME Api for grabbing all the questions 
-
+app.get("/questions", (req, res) => {
+  res.json(fakedata);
+})
 
   // //hardcode the game response for testing reasons to don't saturate my API call. 
 app.get('/api/game', (req, res) =>{
