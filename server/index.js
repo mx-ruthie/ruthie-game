@@ -22,13 +22,18 @@ app.get("/", (req, res) => {
   });
 
 // Make the GET request for the GAME Api for grabbing all the questions 
-app.get("/questions", (req, res) => {
-  res.json(fakedata);
-})
+// app.get("/questions", (req, res) => {
+//   res.json(fakedata);
+// })
 
   // //hardcode the game response for testing reasons to don't saturate my API call. 
 app.get('/api/game', (req, res) =>{
-    res.json(fakedata);
+  fetch("https://opentdb.com/api.php?amount=10")
+  .then((response) => response.json())
+  // the below line of code doesn't in this case actually need the curly brackets and return statement here because there's only one thing happening
+  //but I'm leaving it in to remember the Lesson with Natalia about how I could make more than one thing happen in this .then statment
+  .then((triviaData) => {return res.json(triviaData)});  
+  
 })
 
 
