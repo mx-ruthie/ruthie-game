@@ -32,7 +32,28 @@ app.get('/api/game', (req, res) =>{
   .then((response) => response.json())
   // the below line of code doesn't in this case actually need the curly brackets and return statement here because there's only one thing happening
   //but I'm leaving it in to remember the Lesson with Natalia about how I could make more than one thing happen in this .then statment
-  .then((triviaData) => {return res.json(triviaData)});  
+  .then((triviaData) => {
+    //reverse alphabetize answers so true always comes before false
+    //transform each result in a certain way - modify triviaData.results to include another property called answers which makes one array of strings holding all the answers
+    
+    
+    //triviaData before:    
+
+    //"correct_answer": "True",
+    // "incorrect_answers": [
+    //   "False"
+    //   ]
+
+    //triviaData after:
+    
+    //"correct_answer": "True",
+    // "incorrect_answers": [
+    //   "False"
+    //   ]
+    //"answers": ["True", "False"]
+    
+    return res.json(triviaData)
+  });  
   
 })
 
