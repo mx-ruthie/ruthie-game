@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
 
+
 const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
@@ -21,7 +22,7 @@ const Game = (props) => {
     return (
         <div className="Container">
             <div className='question-count'>
-                <span>Question 1</span>/{questions.length}
+                <h2>Questions</h2>
             </div>
             {questions.map((question, index) => {
                 return <QuestionCard key={index} question={question} />
