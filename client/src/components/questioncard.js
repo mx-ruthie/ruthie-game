@@ -3,9 +3,10 @@ import { decode } from "html-entities";
 const QuestionCard = (props) => {
   //creates basic array of all 4 answer choices for use in the map
   let answers = [
-    decode(props.question.correct_answer),
-    decode(...props.question.incorrect_answers),
+    props.question.correct_answer,
+    ...props.question.incorrect_answers,
   ];
+  decode(answers);
   // console.log(answers);
   //many thanks to Camille for sharing code with me so I could wrap my brain around how to map these multiple choice answers
   return (
