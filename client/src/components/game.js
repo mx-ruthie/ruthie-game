@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
-
+import Score from "./score";
 
 const Game = (props) => {
 
     const [questions, setQuestions] = useState([]);
+    const [scoreCount, setScoreCount] = useState(0);
 
     const loadData = () => {
         fetch('http://localhost:5000/api/game')
@@ -14,20 +15,23 @@ const Game = (props) => {
                 setQuestions(data.results);
             })
     }
-
+console.log(scoreCount);
     useEffect(() => {
         loadData();
     }, [])
 
     return (
+        <>
+        <Score score={scoreCount}/>
         <div className="Container">
             <div className='question-count'>
                 <h2>Questions</h2>
             </div>
             {questions.map((question, index) => {
-                return <QuestionCard key={index} question={question} />
+                return <QuestionCard key={index} question={question} score={scoreCount} scoreCount={setScoreCount} />
             })}
         </div>
+        </>
     )
 
 }

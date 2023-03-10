@@ -6,6 +6,8 @@ import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState("");
+
+
   const handleUser = (text) =>{
     setUser(text);
   }
