@@ -28,7 +28,7 @@ console.log(scoreCount);
                 <h2>Questions</h2>
             </div>
             {questions.map((question, index) => {
-                return <QuestionCard key={index} question={question} score={scoreCount} scoreCount={setScoreCount} />
+                return <QuestionCard key={index} question={question} score={scoreCount} setScoreCount={setScoreCount} />
             })}
         </div>
         </>

@@ -1,12 +1,15 @@
 import { decode } from "html-entities";
+import { useState } from "react";
 
 const QuestionCard = (props) => {
   //creates basic array of all 4 answer choices for use in the map
+  const [answered, setAnswered] = useState(false);
+  
   let answers = [
     props.question.correct_answer,
     ...props.question.incorrect_answers,
   ];
-  decode(answers);
+
   // console.log(answers);
   //many thanks to Camille for sharing code with me so I could wrap my brain around how to map these multiple choice answers
   return (
@@ -19,14 +22,15 @@ const QuestionCard = (props) => {
               className="button-52"
               key={index}
               name="answerChoices"
+              disabled={answered}
               onClick={() => {
+                setAnswered(true);
                 if (answer === props.question.correct_answer) {
-                  props.scoreCount(props.score + 1 );
-                  console.log(props.score)
+                  props.setScoreCount(props.score + 1 );
                 }
               }}
             >
-              {answer}
+              {decode(answer)}
             </button>
           );
         })}
