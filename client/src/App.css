@@ -1,10 +1,10 @@
 .App {
-  background-color: #eaeff1;
   font-family: "Raleway", sans-serif;
   display:flex; 
   flex-direction:column; 
   justify-content:center;
 }
+
 
 .textHeader{
   align-self: center;
@@ -26,16 +26,93 @@
 
 .question-section{
   /* Change background color */
-  background-color: white;
+
 
   /* Add border */
-  border: 1px solid #bacdd8;
+  border: 3px solid #881440;
+  animation: 4s infinite glow;
 
   /* Add space between the border and the content */
   padding: 8px;
+
+  margin: 10px;
 
   border-radius: 12px;
 
   width: 70%;
 
+  height: 250px;
+  margin: 50px;
+  outline: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* <!-- HTML !-->
+<button class="button-52" role="button">Button 52</button> */
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+
+body {
+  animation: 10000ms ease-in-out infinite color-change;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: teal;
+  }
+  20% {
+    background-color: gold;
+  }
+  40% {
+    background-color: indianred;
+  }
+  60% {
+    background-color: violet;
+  }
+  80% {
+    background-color: green;
+  }
+  100% {
+    background-color: teal;
+  }
 }
