@@ -9,7 +9,7 @@ const QuestionCard = (props) => {
     <div className={"question-section"}>
       <div className="question-text">{decode(props.question.question)}</div>
       <div className="answer-section">{answers.map((answer, index) => {
-        return <button key={index} name="answerChoices"></button>
+        return <button key={index} name="answerChoices" onClick={()=>{console.log("working")}}>{answer}</button>
       })}
       </div>
     </div>
