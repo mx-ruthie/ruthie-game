@@ -6,6 +6,8 @@ import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState("");
+
+
   const handleUser = (text) =>{
     setUser(text);
   }
@@ -13,7 +15,7 @@ function App() {
   return (
     <div className="App">
     <Header user={user} />
-    <UserForm grabUser={handleUser} />
+    {!user ? <UserForm grabUser={handleUser} /> : null }
     {user ? <Game /> : null}
       
     </div>
